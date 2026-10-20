@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101827"><title>Brasileirão 2026 | Dashboard</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="background-glow"></div>
+<main class="container">
+  <header class="topbar"><a class="brand" href="/"><span class="brand-mark">B</span><span>BRASILEIRÃO<small>PAINEL 2026</small></span></a><span class="live-label"><span class="live-dot"></span>DADOS DA API</span></header>
+  <section class="hero"><div><p class="eyebrow">TEMPORADA 2026 · SÉRIE A</p><h1>Dashboard do <span>Brasileirão.</span></h1><p class="subtitle">Classificação, estatísticas e gráficos dos clubes em um só lugar.</p></div><div class="hero-ball" aria-hidden="true">⚽</div></section>
+  <section class="summary-grid stats-grid">
+    <article class="summary-card"><span class="summary-label">Times na tabela</span><strong id="team-count">—</strong><span class="summary-note">Clubes retornados pela API</span></article>
+    <article class="summary-card"><span class="summary-label">Rodada atual</span><strong id="matchday">—</strong><span class="summary-note">Quando informado pela fonte</span></article>
+    <article class="summary-card"><span class="summary-label">Gols marcados</span><strong id="total-goals">—</strong><span class="summary-note">Somando todos os clubes</span></article>
+    <article class="summary-card"><span class="summary-label">Média de gols por jogo</span><strong id="goals-average">—</strong><span class="summary-note">Estimativa com base na tabela</span></article>
+    <article class="summary-card"><span class="summary-label">Líder atual</span><strong id="leader-name" class="leader-value">—</strong><span class="summary-note" id="leader-points">Aguardando dados</span></article>
+    <article class="summary-card"><span class="summary-label">Última consulta</span><strong id="updated-at" class="updated-value">Aguardando</strong><span class="summary-note" id="cache-status">Consultando dados da API</span></article>
+  </section>
+  <section class="charts-grid">
+    <article class="chart-panel"><div class="chart-heading"><div><h2>Top 10 por pontos</h2><p>Comparação dos clubes mais bem colocados.</p></div><span class="chart-tag">PONTOS</span></div><div id="points-chart" class="bar-chart"><p class="chart-placeholder">Carregando gráfico...</p></div></article>
+    <article class="chart-panel"><div class="chart-heading"><div><h2>Gols: marcados x sofridos</h2><p>Os 8 primeiros clubes da tabela.</p></div><span class="chart-tag">GOLS</span></div><div class="chart-legend"><span><i class="key goals-for"></i>Marcados</span><span><i class="key goals-against"></i>Sofridos</span></div><div id="goals-chart" class="goals-chart"><p class="chart-placeholder">Carregando gráfico...</p></div></article>
+    <article class="chart-panel results-panel"><div class="chart-heading"><div><h2>Resultados acumulados</h2><p>Vitórias, empates e derrotas somados.</p></div></div><div class="results-content"><div id="results-donut" class="donut"><div><strong id="results-total">—</strong><span>resultados</span></div></div><div id="results-legend" class="results-legend"></div></div></article>
+  </section>
+  <section class="table-panel"><div class="table-heading"><div><h2>Classificação geral</h2><p>Ordenada pela posição enviada pela API.</p></div><button id="refresh-button" class="refresh-button" type="button"><span aria-hidden="true">↻</span> Atualizar agora</button></div><div id="status" class="status" role="status">Carregando classificação...</div><div class="table-scroll"><table><thead><tr><th class="pos-col">#</th><th class="club-col">Clube</th><th>PTS</th><th>J</th><th>V</th><th>E</th><th>D</th><th>GP</th><th>GC</th><th>SG</th></tr></thead><tbody id="standings-body"></tbody></table></div><div class="legend"><span><i class="legend-dot top"></i> Parte superior da tabela</span><span><i class="legend-dot bottom"></i> Parte inferior da tabela</span><span>PTS pontos · J jogos · GP gols pró · GC gols contra · SG saldo de gols</span></div></section>
+  <footer><span>Fonte: football-data.org</span><span>Dados e gráficos calculados a partir da tabela retornada pela API.</span></footer>
+</main><script src="/app.js"></script>
+</body></html>
